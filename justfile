@@ -13,7 +13,7 @@ help:
 
 # Set up local R&D Python environment for running examples
 setup-dev:
-    uv sync --group misc
+    uv sync --dev --group misc
 
 # Run tests
 test:
@@ -97,20 +97,14 @@ build-luxical:
 # Build all arrow_tokenize wheels
 build-arrow-tokenize: build-arrow-tokenize-macos-local build-arrow-tokenize-linux-cross
 
-# Build arrow_tokenize and luxical wheels for local macos usage
-build-local: build-arrow-tokenize-macos-local build-luxical
-
-# Build all wheels
-build: build-arrow-tokenize build-luxical
-
 # Publish arrow tokenize wheels to PyPI
-publish-wheel-arrow-tokenize: clean
+publish-wheel-arrow-tokenize:
     @echo "Publishing arrow_tokenize wheels to PyPI..."
-    uv publish --wheel arrow_tokenize/target/wheels/*
+    uv run twine upload arrow_tokenize/target/wheels/*
     @echo "✅ arrow_tokenize wheels published!"
 
 # Publish luxical wheel to PyPI
-publish-wheel-luxical: clean
+publish-wheel-luxical:
     @echo "Publishing luxical wheel to PyPI..."
-    uv publish --wheel dist/*
+    uv run twine upload dist/*
     @echo "✅ luxical wheel published!"

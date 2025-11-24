@@ -174,6 +174,8 @@ See [`./projects/luxical_one`](./projects/luxical_one/) for example training cod
 5) Publish to PyPI (see below)
 5) Optional: tag versions and push tags, e.g. `git tag vX.Y.Z` or `git tag arrow-tokenize-vA.B.C` followed by `git push --tags`.
 
+For steps 4 & 5 you would run `just clean build-luxical publish-wheel-luxical` to release a `luxical`-only change, or `just clean build-arrow-tokenize build-luxical publish-wheel-arrow-tokenize publish-wheel-luxical` to ship an update to both `arrow-tokenize` and `luxical` (e.g. updating the `arrow-tokenize` code and then updating `luxical` to use the new version of `arrow-tokenize`).
+
 ### Versioning
 Version sources are in code, and builds read from those sources when creating wheels.
 
