@@ -46,5 +46,8 @@ chunks = arrow_tokenize_texts([
 
 ## Release Notes
 
+### v1.0.1 - 2025-11-24
+- Correct license metadata in `pyproject.toml`
+
 ### v1.0.0 - 2025-09-22
 - Initial release. Intended to be the only release until we need to bump dependency versions.
