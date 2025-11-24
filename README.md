@@ -11,14 +11,7 @@ Fast lexical embeddings built on token counts, TF–IDF, and compact sparse‑to
 ## Table of Contents
 
 - [Quick Start](#quick-start)
-  - [Installation](#installation)
-  - [Using HuggingFace `transformers`](#using-huggingface-transformers)
-  - [Using the native `luxical` package APIs](#using-the-native-luxical-package-apis)
 - [Architecture Notes](#architecture-notes)
-  - [Lexical + Dense](#lexical--dense)
-  - [Sparse‑by‑dense Is Fast](#sparse‑by‑dense-is-fast)
-  - [A Focus On Efficiency](#a-focus-on-efficiency)
-  - [Training Via Distillation](#training-via-distillation)
 - [Training](#training)
 - [Development](#development)
 - [Release Notes](#release-notes)
