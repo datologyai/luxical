@@ -163,16 +163,16 @@ See [`./projects/luxical_one`](./projects/luxical_one/) for example training cod
   - `just lint` — autoformat, lint (with autofix), and typecheck
   - `just test` — run tests
 
-### Building and Publishing
 
-For the core Luxical codebase (in `src`):
-- Local wheel: `just build-luxical`
-- Publish to the configured index: `just publish-luxical --no-dry-run`
-
-For the `arrow-tokenize` Rust extension:
-- macOS local wheels: `just build-arrow-tokenize-macos-local`
-- Linux wheels via Docker: `just build-arrow-tokenize-linux-cross`
-- Publish: `just publish-arrow-tokenize --no-dry-run`
+### Release Checklist
+1) Choose patch/minor/major version. Versions may be separate for `luxical` and `arrow-tokenize`.
+2) Bump version(s):
+   - for luxical: edit `src/luxical/__about__.py`.
+   - for arrow_tokenize: edit `arrow_tokenize/Cargo.toml`.
+3) Update `README.md` with a dated entry for Luxical updates. Update the Release Notes section of `arrow_tokenize/README.md` for arrow_tokenize updates.
+4) Build wheels (see below)
+5) Publish to PyPI (see below)
+5) Optional: tag versions and push tags, e.g. `git tag vX.Y.Z` or `git tag arrow-tokenize-vA.B.C` followed by `git push --tags`.
 
 ### Versioning
 Version sources are in code, and builds read from those sources when creating wheels.
@@ -185,14 +185,15 @@ Version sources are in code, and builds read from those sources when creating wh
   - Source of truth: `arrow_tokenize/Cargo.toml` → `[package].version = "A.B.C"`
   - Runtime API: `import arrow_tokenize as at; at.__version__`
 
-### Cutting a Release
-1) Choose patch/minor/major version. Versions may be separate for `luxical` and `arrow-tokenize`.
-2) Bump version(s):
-   - for luxical: edit `src/luxical/__about__.py`.
-   - for arrow_tokenize: edit `arrow_tokenize/Cargo.toml`.
-3) Update `README.md` with a dated entry for Luxical updates. Update the Release Notes section of `arrow_tokenize/README.md` for arrow_tokenize updates.
-4) Publish to PyPI (see below)
-5) Optional: tag versions and push tags, e.g. `git tag vX.Y.Z` or `git tag arrow-tokenize-vA.B.C` followed by `git push --tags`.
+### Building Wheels
+
+For the core Luxical codebase (in `src`):
+- Local wheel: `just build-luxical`
+- Publish to the configured index: `just publish-luxical --no-dry-run`
+
+For the `arrow-tokenize` Rust extension:
+- macOS local wheels: `just build-arrow-tokenize-macos-local`
+- Linux wheels via Docker: `just build-arrow-tokenize-linux-cross`
 
 ### Pushing to PyPI
 
