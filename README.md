@@ -198,7 +198,7 @@ Version sources are in code, and builds read from those sources when creating wh
 
 Get an API token from PyPI (under the [account settings](https://pypi.org/manage/account/) page). Add it to your `~/.pypirc`
 
-```toml
+```conf
 # Contents of ~/.pypirc
 [testpypi]
   repository = https://upload.pypi.org/legacy/
@@ -217,5 +217,8 @@ just publish-wheel-arrow-tokenize
 
 ## Release Notes
 
+### v1.1.0 — 2025-11-24
+- Public release
+
 ### v1.0.0 — 2025-09-22
-- Initialize release notes and publishing workflow.
+- Initialize release notes and publishing workflow (internal).
