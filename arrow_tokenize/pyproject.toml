@@ -1,0 +1,35 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "arrow-tokenize"
+dynamic = ["version"]
+description = "Fast Rust tokenization without Python garbage collection slowdowns"
+authors = [
+    { name = "Luke Merrick", email = "luke@datology.ai" },
+    { name = "DatologyAI Team" },
+]
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "License :: Other/Proprietary License",
+]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = [
+    "pyarrow>=20.0.0",
+    "tokenizers>=0.21.1",
+]
+
+[tool.maturin]
+module-name = "arrow_tokenize"
+
+[dependency-groups]
+build = [
+    "maturin>=1.9.3",
+]

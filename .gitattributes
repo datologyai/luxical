@@ -1,0 +1,8 @@
+*.npz binary
+*.npy binary
+*.arrow binary
+*.parquet binary
+*.pt binary
+*.bin binary
+*.onnx binary
+
