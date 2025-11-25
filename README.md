@@ -220,6 +220,9 @@ just publish-wheel-arrow-tokenize
 
 ## Release Notes
 
+### v1.1.2 - 2025-11-24
+- Clarify upper limit of supported Python versions in `pyproject.toml`
+
 ### v1.1.1 - 2025-11-24
 - Correct license metadata in `pyproject.toml`
 

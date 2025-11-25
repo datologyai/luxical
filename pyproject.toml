@@ -7,7 +7,7 @@ authors = [
 dynamic = ["version"]
 description = "Lexical dense embeddings. Fast like light (lux)."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.11,<3.14"
 classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
     "Operating System :: MacOS",
