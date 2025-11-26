@@ -65,7 +65,7 @@ emb = embedder(["Luxical goes", "very fast"], progress_bars=True)
 # (e.g. Parquet) may automatically compress roundtrip-quantized data by 4x.
 emb_uint8 = luxical.misc_utils.fast_8bit_uniform_scalar_quantize(emb, limit=0.5)
 emb_roundtrip = luxical.misc_utils.dequantize_8bit_uniform_scalar_quantized(
-    emb_quantized, limit=0.5
+    emb_uint8, limit=0.5
 )
 
 # EXTRA
