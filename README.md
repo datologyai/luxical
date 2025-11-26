@@ -26,24 +26,23 @@ pip install luxical
 
 We currently support MacOS and Linux and Python versions 3.11, 3.12, and 3.13. These limitations are due to the inclusion of complied Rust extension code via the included `arrow-tokenize` package.
 
-### Using HuggingFace `transformers`
+### Using HuggingFace `transformers` integration
 
-We have a basic HuggingFace integration that supports inference only. Use of this packaging requires 
+We have a basic HuggingFace integration that supports inference only. This integration still requires the `luxical` package.
 
 ``` python
-from transformers import AutoModel
 from pathlib import Path
 
-# Load from the Huggingface Hub (public or you are logged in for private repos)
-hub_model = AutoModel.from_pretrained(
-    "datologyai/luxical-one",
-    trust_remote_code=True,
-)
+from transformers import AutoModel
 
-# Load from a local export directory
+# Load from the Huggingface Hub.
+hub_model = AutoModel.from_pretrained("datologyai/luxical-one", trust_remote_code=True)
+
+# Load from a local export directory.
 local_dir = Path("~/Downloads/luxical_one_hf").expanduser()
 local_model = AutoModel.from_pretrained(local_dir, trust_remote_code=True)
 
+# Embed.
 emb = local_model(["Luxical integrates with Huggingface."]).embeddings
 ```
 
