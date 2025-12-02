@@ -1,5 +1,7 @@
 # Luxical — lexical dense embeddings
 
+![logo](./Luxical_logo.png)
+
 Fast lexical embeddings built on token counts, TF–IDF, and compact sparse‑to‑dense MLPs.
 
 > :fast_forward: For the ***Quickest*** Start, check out our [Luxical One model on HuggingFace](https://huggingface.co/DatologyAI/luxical-one).
