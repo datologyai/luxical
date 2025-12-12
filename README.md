@@ -4,6 +4,8 @@
 
 Fast lexical embeddings built on token counts, TF–IDF, and compact sparse‑to‑dense MLPs.
 
+Read the full story in our [blog post](https://www.datologyai.com/blog/introducing-luxical-embeddings).
+
 > :fast_forward: For the ***Quickest*** Start, check out our [Luxical One model on HuggingFace](https://huggingface.co/DatologyAI/luxical-one).
 
 > :warning: **NOTE:** No Planned Active Maintainance :warning:
