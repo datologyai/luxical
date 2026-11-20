@@ -128,6 +128,7 @@ class LuxicalOneModel(PreTrainedModel):
             Path(embedder_path).resolve() if embedder_path is not None else None
         )
         super().__init__(config)
+        self.post_init()
 
     def post_init(self) -> None:
         super().post_init()
